@@ -1,0 +1,730 @@
+<!DOCTYPE html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8" />
+	<title>Composite descriptives</title>
+	<meta content="width=device-width,initial-scale=1" name="viewport" />
+	<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+
+	<script src="https://inspire.ec.europa.eu/cdn/1.0/js/jquery.min.js" crossorigin=""></script>
+	<script src="https://inspire.ec.europa.eu/cdn/1.0/js/popper.min.js" crossorigin="" defer></script>
+	<script src="https://inspire.ec.europa.eu/cdn/1.0/js/bootstrap.min.js" crossorigin="" defer></script>
+	<script src="https://inspire.ec.europa.eu/cdn/1.0/js/bootstrap-select.min.js" crossorigin="" defer></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>-->
+	<script src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+	<!--<script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>-->
+	<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">-->
+
+	
+	<script>
+		var cl = document.querySelector('html').classList;
+		cl.remove('no-js');
+		cl.add('has-js');
+	</script>
+	
+	<script>
+		$(function () {
+
+
+			//1. Interesting apps
+			var ctxMan1a = document.getElementById('chart-areaInteresting_8a').getContext('2d');
+			var randomScalingFactor = function() {
+				return Math.round(Math.random() * 100);
+			};
+
+			var configMan1a = {
+				type: 'doughnut',
+				data: {
+					datasets: [{
+						data: [140,327],
+						backgroundColor: ['#17668f','#ffc000'],
+						label: 'iOS'
+					},
+					{
+						data: [119,251],
+						backgroundColor: ['#17668f','#ffc000'],
+						label: 'Android'
+					}],
+					labels: ['Yes','No']
+				},
+				options: {
+					responsive: true,
+					legend: {
+						position: 'right',
+						labels: {
+							fontSize: 14,
+							fontStyle: 'bold'
+						},
+					},
+					title: {
+						display: false,
+						text: 'Interesting Apps'
+					},
+					animation: {
+						animateScale: true,
+						animateRotate: true
+					},
+					plugins: {
+						datalabels: {
+							display: false,
+							anchor: 'center',
+							align: 'center',
+							formatter: Math.round,
+							font: {
+								weight: 'bold',
+								size: 14
+							},
+							color: '#ffffff'
+						}
+					}               
+				}
+			};
+			var myDoughnut1a = new Chart(ctxMan1a, configMan1a);
+
+
+//2. EU/non EU vs. Interesting apps
+var ctxMan13a1a = document.getElementById('chart-PolarArea13a1a');
+
+
+var configMan13a1a = {
+	type: 'polarArea',
+	data: {
+		datasets: [{
+			data: [
+			54,
+			99,
+			205,
+			479
+			],
+			backgroundColor: [
+			"rgba(23, 102, 143, 0.8)",
+			"rgba(0, 144, 158, 0.8)",
+			"rgba(108, 190, 71, 0.8)",
+			"rgba(255, 192, 0, 0.8)"
+			],
+			label: 'iOS'
+		}],
+		labels: [
+		'Interesting apps released for at least one EU country',
+		'Not interesting apps released for at least one EU country',
+		'Interesting apps released for no EU country',
+		'Not interesting apps released for no EU country'
+		]
+	},
+	options: {
+		responsive: true,
+		legend: {
+			position: 'right',
+			labels: {
+				fontSize: 14,
+				fontStyle: 'bold'
+			},
+		},
+		title: {
+			display: false,
+			text: 'Tracking apps'
+		},
+		animation: {
+			animateScale: true,
+			animateRotate: true
+		},
+		plugins: {
+			datalabels: {
+				display: false,
+				anchor: 'center',
+				align: 'center',
+				formatter: Math.round,
+				font: {
+					weight: 'bold',
+					size: 14
+				},
+				/*color: '#000000'*/
+				color: function(context) {
+					var index = context.dataIndex;
+					var value = context.dataset.data[index];
+
+             					//Inside the "dataset" we look for the "labels" we are using
+             					//and store them in a variable
+             					var valueWhite = context.dataset.label;
+
+             					//We make the condition: if a value of the label is "Strong blue"
+             					//then we color this label 'white'
+             					if(value < 70) {
+             						return value = '#ffffff';
+             					} else {
+                 				//If it's any other label, we color it 'black'
+                 				return value = '#ffffff';
+                 			}
+                 		}
+                 	}
+                 }
+
+             }
+         };
+
+
+         var myPolarArea13a1a = new Chart(ctxMan13a1a, configMan13a1a);
+
+//3. Contact Tracing apps vs. Interesting apps
+var ctxMan16 = document.getElementById('chart-areaContactInteresting_a').getContext('2d');
+var randomScalingFactor = function() {
+	return Math.round(Math.random() * 100);
+};
+
+
+var configMan16 = {
+	type: 'doughnut',
+	data: {
+		datasets: [{
+			data: [
+			74,
+			/*1,*/
+			66,
+			326
+			],
+			backgroundColor: [
+
+			'#17668f',
+			/*'#00aa7e',*/
+			'#7fc03d',
+			'#ffc000'
+
+			],
+			label: 'iOS'
+		},
+		{
+			data: [
+			63,
+			/*0,*/
+			56,
+			251
+			],
+			backgroundColor: [
+
+			'#17668f',
+			/*'#00aa7e',*/
+			'#6cbe47',
+			'#ffc000'
+
+			],
+			label: 'Android'
+		}],
+		labels: [
+		'Contact tracing interesting apps',
+		/*'Contact tracing not interesting apps',*/
+		'Not contact tracing interesting apps',
+		'Not contact tracing not interesting apps'
+
+		]
+	},
+	options: {
+		responsive: true,
+		legend: {
+			position: 'right',
+			labels: {
+				fontSize: 14,
+				fontStyle: 'bold'
+			},
+		},
+		title: {
+			display: false,
+			text: 'Contact tracing Apps'
+		},
+		animation: {
+			animateScale: true,
+			animateRotate: true
+		},
+		plugins: {
+			datalabels: {
+				display: false,
+				anchor: 'center',
+				align: 'center',
+				formatter: Math.round,
+				font: {
+					weight: 'bold',
+					size: 14
+				},
+				color: '#FFFFFF'
+			}
+		}
+	}
+};
+
+
+var myDoughnut16 = new Chart(ctxMan16, configMan16);
+
+
+//4. Contact Tracing apps vs. EU/non EU
+var ctxMan20 = document.getElementById('chart-areaContactInterestingEU').getContext('2d');
+var randomScalingFactor = function() {
+	return Math.round(Math.random() * 100);
+};
+
+
+var configMan20 = {
+	type: 'doughnut',
+	data: {
+		datasets: [{
+			data: [
+			15,
+			60,
+			73,
+			319
+			],
+			backgroundColor: [
+
+			'#17668f',
+			'#00aa7e',
+			'#7fc03d',
+			'#ffc000'
+
+			],
+			label: 'iOS'
+		},
+		{
+			data: [
+			15,
+			48,
+			50,
+			257
+			],
+			backgroundColor: [
+
+			'#17668f',
+			'#00aa7e',
+			'#6cbe47',
+			'#ffc000'
+
+			],
+			label: 'Android'
+		}],
+		labels: [
+		'Contact tracing apps released for at least one EU country',
+		'Contact tracing apps released for no EU country',
+		'Not contact tracing apps released for at least one EU country',
+		'Not contact tracing apps released for no EU country'
+		]
+	},
+	options: {
+		responsive: true,
+		legend: {
+			position: 'right',
+			labels: {
+				fontSize: 14,
+				fontStyle: 'bold'
+			},
+		},
+		title: {
+			display: false,
+			text: 'Contact tracing Apps'
+		},
+		animation: {
+			animateScale: true,
+			animateRotate: true
+		},
+		plugins: {
+			datalabels: {
+				display: false,
+				anchor: 'center',
+				align: 'center',
+				formatter: Math.round,
+				font: {
+					weight: 'bold',
+					size: 14
+				},
+				color: '#FFFFFF'
+			}
+		}
+	}
+};
+
+
+var myDoughnut20 = new Chart(ctxMan20, configMan20);
+
+
+
+});
+</script>
+
+
+<link rel="stylesheet" href="css/style.css">
+<link
+rel="stylesheet"
+href="https://cdn1.fpfis.tech.ec.europa.eu/ecl/v2.24.0/ec-preset-website/styles/ecl-ec-preset-website.css"
+integrity="sha256-9j7SsICl+ZX7Fp76FW0ujTGffmyeiYjozFz5CrW8cBI= sha384-ylCAZZb1gOTwHIcxzpGsGD7dBgLgo3+ElksYZVMRUNEai06BznLjw4s4PygTkhUR sha512-NT5nVMJhZeIXxAs9GpbgD3YFbW8j9IuuI2MGUYrIcV9w9ZGK1RiI53UX1B3z2hOGUq8EsVpVwsd7tv6yoISjAg=="
+crossorigin="anonymous"
+media="screen"
+/>
+<link
+rel="stylesheet"
+href="https://cdn1.fpfis.tech.ec.europa.eu/ecl/v2.24.0/ec-preset-website/styles/ecl-ec-preset-website-print.css"
+integrity="sha256-045tJgqAj/Roq6CMlkNAeuqaVwsVkgxRlx2yVAwJ+K8= sha384-DRy0ViDtsad7jBr29u25O6IVB7x/ioCf+NFF/VYUADAqtglqsdzgyRAI6Ws2ditv sha512-xLJwwvWHtB4immzoa6KERTGK5tRsYg1+jlFucj3FNfbiUd1yanLTVtHvpvM3GBYIo+I7Vk1ks1rhnkYh+KEcJA=="
+crossorigin="anonymous"
+media="print"
+/>
+<link rel="stylesheet" href="https://inspire.ec.europa.eu/cdn/1.0/css/ec.eu.css">
+<!--<link rel="stylesheet" href="css/style.css">-->
+
+
+<style>
+	body {
+		font-family: 'Arial';
+		text-align: justify;
+	}
+
+	.container { 
+		margin: 15px auto;
+	}
+
+	#chart {
+		float: left;
+		width: 80%;
+	}
+
+	#legend {
+		float: left;
+		margin: 0;
+		position: relative;
+		top: 50%;
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+
+	[class$="-legend"] {
+		list-style: none;
+		cursor: pointer;
+		padding-left: 0;
+	}
+
+	[class$="-legend"] li {
+		display: block;
+		padding: 0 5px;
+	}
+
+	[class$="-legend"] li.hidden {
+		text-decoration: line-through;
+	}
+
+	[class$="-legend"] li span {
+		border-radius: 5px;
+		display: inline-block;
+		height: 10px;
+		margin-right: 10px;
+		width: 30px;
+	}
+
+
+	.arrow {
+		border: solid white;
+		border-width: 0 2px 2px 0;
+		display: inline-block;
+		padding: 3px;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+
+	.right {
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+	}
+
+		a.ecl-footer-standardised__link.ecl-link.ecl-link--standalone {
+			color: #fff;	
+		}
+
+		a.ecl-footer-standardised__title.ecl-link.ecl-link--standalone {
+			color: #fff;	
+		}	
+
+</style>
+
+
+</head>
+<body>
+	<body>
+		<!-- paste the markup from the template here -->
+
+		<header data-ecl-auto-init="SiteHeaderStandardised" class="ecl-site-header-standardised">
+			<div class="ecl-site-header-standardised__container ecl-container">
+				<div class="ecl-site-header-standardised__top"><a
+					class="ecl-link ecl-link--standalone ecl-site-header-standardised__logo-link" href="http://ec.europa.eu/"
+					aria-label="European Commission"><img alt="European Commission logo" title="European Commission"
+					class="ecl-site-header-standardised__logo-image"
+					src="https://ec.europa.eu/info/sites/info/themes/europa/images/svg/logo/logo--en.svg" /></a>
+					<div class="ecl-site-header-standardised__action">
+        <!-- <div class="ecl-site-header-standardised__login-container"><a
+            class="ecl-link ecl-link--standalone ecl-site-header-standardised__login-toggle" href="/example"><svg
+              focusable="false" aria-hidden="true" class="ecl-icon ecl-icon--s">
+              <use xlink:href="/component-library/dist/media/icons.1dbe9812.svg#general--log-in"></use>
+            </svg>Log in</a></div>
+			<a class="ecl-link ecl-link--standalone ecl-site-header-standardised__language-selector" href="/example"
+          data-ecl-language-selector="true"><span class="ecl-site-header-standardised__language-icon"><svg
+              focusable="false" aria-hidden="true" class="ecl-icon ecl-icon--s">
+              <use xlink:href="/component-library/dist/media/icons.1dbe9812.svg#general--language"></use>
+          </svg><span class="ecl-site-header-standardised__language-code">en</span></span>English</a> -->
+          <div class="ecl-site-header-standardised__search-container"><a
+          	class="ecl-link ecl-link--standalone ecl-site-header-standardised__search-toggle" href="/example"
+          	data-ecl-search-toggle="true" aria-controls="search-form-id" aria-expanded="false"><svg focusable="false"
+          	aria-hidden="true" class="ecl-icon ecl-icon--s">
+          	<use xlink:href="/component-library/dist/media/icons.1dbe9812.svg#general--search"></use>
+          </svg>Search</a>
+          <form id="nexteuropa-europa-search-search-form" data-ecl-search-form="true"
+          class="ecl-site-header-standardised__search ecl-search-form" role="search" action="https://ec.europa.eu/search/?" method="get" >
+          <div class="ecl-form-group ecl-form-group--text-input"><label class="ecl-search-form__label ecl-form-label"
+          	for="search-input-id">Search</label><input type="search" id="edit-querytext" name="QueryText" 
+          	class="ecl-search-form__text-input ecl-text-input" /></div><button aria-label="Search" type="submit"
+          	class="ecl-search-form__button ecl-button ecl-button--search"><span class="ecl-button__container"><span
+          		class="ecl-button__label" data-ecl-label="true">Search</span><svg focusable="false" aria-hidden="true"
+          		data-ecl-icon="true" class="ecl-button__icon ecl-button__icon--after ecl-icon ecl-icon--xs">
+          		<use xlink:href="/component-library/dist/media/icons.1dbe9812.svg#general--search"></use>
+          	</svg></span></button>
+          	<input type="hidden" name="form_build_id" value="form-HNzukaUwhdrtb67yMDfcMamU5dTPWdPx0f_pJEaMQZI" />
+          	<input type="hidden" name="form_id" value="nexteuropa_europa_search_search_form" />
+          </form>
+      </div>
+  </div>
+</div>
+</div>
+<div class="ecl-site-header-standardised__banner" style="padding-top: 1.5rem">
+	<div class="ecl-container">
+		<nav class="ecl-breadcrumb-core ecl-page-header__breadcrumb" aria-label="" data-ecl-breadcrumb-core="true">
+			<ol class="ecl-breadcrumb-core__container">
+				<li class="ecl-breadcrumb-core__segment" data-ecl-breadcrumb-core-item="static">
+					<a href="index.html" class="ecl-link ecl-link--standalone ecl-breadcrumb-core__link">COVID-19 related mobile apps</a><i class="arrow right"></i>
+				</li>
+				<li class="ecl-breadcrumb-core__segment" data-ecl-breadcrumb-core-item="static">
+					<a href="statistics.html" class="ecl-link ecl-link--standalone ecl-breadcrumb-core__link">Statistics</a><i class="arrow right"></i>
+				</li>
+				<li class="ecl-breadcrumb-core__segment ecl-breadcrumb-core__current-page" data-ecl-breadcrumb-core-item="static" aria-current="page">Composite descriptives</li>
+			</ol>
+		</nav>Composite descriptives</div>
+	</div>
+	<div hidden="" class="ecl-language-list ecl-language-list--overlay" aria-labelledby="ecl-language-list__title"
+	role="dialog" data-ecl-language-list-overlay="true">
+	<div class="ecl-language-list__container ecl-container">
+		<div class="ecl-row">
+			<div class="ecl-language-list__close ecl-col-12 ecl-col-lg-8 ecl-offset-lg-2"><button
+				data-ecl-language-list-close="true" type="submit"
+				class="ecl-language-list__close-button ecl-button ecl-button--ghost"><span
+				class="ecl-button__container"><span class="ecl-button__label" data-ecl-label="true">Close</span><svg
+				focusable="false" aria-hidden="true" data-ecl-icon="true"
+				class="ecl-button__icon ecl-button__icon--after ecl-icon ecl-icon--s">
+				<use xlink:href="/component-library/dist/media/icons.1dbe9812.svg#ui--close"></use>
+			</svg></span></button></div>
+			<div class="ecl-language-list__title ecl-col-12 ecl-col-lg-8 ecl-offset-lg-2" id="ecl-language-list__title"><svg
+				focusable="false" aria-hidden="true" class="ecl-language-list__title-icon ecl-icon ecl-icon--m">
+				<use xlink:href="/component-library/dist/media/icons.1dbe9812.svg#general--generic-lang"></use>
+			</svg>Select your language</div>
+		</div>
+		<div class="ecl-row">
+			<div class="ecl-language-list__column ecl-col-12 ecl-col-lg-4 ecl-offset-lg-2">
+				<ul class="ecl-language-list__list">
+					<li class="ecl-language-list__item "><a lang="bg" hrefLang="bg" rel="alternate" href="/example#language_bg"
+						class="ecl-language-list__link ecl-link ecl-link--standalone">български</a></li>
+						<li class="ecl-language-list__item "><a lang="es" hrefLang="es" rel="alternate" href="/example#language_es"
+							class="ecl-language-list__link ecl-link ecl-link--standalone">español</a></li>
+							<li class="ecl-language-list__item "><a lang="cs" hrefLang="cs" rel="alternate" href="/example#language_cs"
+								class="ecl-language-list__link ecl-link ecl-link--standalone">čeština</a></li>
+								<li class="ecl-language-list__item "><a lang="da" hrefLang="da" rel="alternate" href="/example#language_da"
+									class="ecl-language-list__link ecl-link ecl-link--standalone">dansk</a></li>
+									<li class="ecl-language-list__item "><a lang="de" hrefLang="de" rel="alternate" href="/example#language_de"
+										class="ecl-language-list__link ecl-link ecl-link--standalone">Deutsch</a></li>
+										<li class="ecl-language-list__item "><a lang="et" hrefLang="et" rel="alternate" href="/example#language_et"
+											class="ecl-language-list__link ecl-link ecl-link--standalone">eesti</a></li>
+											<li class="ecl-language-list__item "><a lang="el" hrefLang="el" rel="alternate" href="/example#language_el"
+												class="ecl-language-list__link ecl-link ecl-link--standalone">ελληνικά</a></li>
+												<li class="ecl-language-list__item ecl-language-list__item--is-active"><a lang="en" hrefLang="en"
+													rel="alternate" href="/example#language_en"
+													class="ecl-language-list__link ecl-link ecl-link--standalone ecl-link--icon ecl-link--icon-after"><span
+													class="ecl-link__label">English</span> <svg focusable="false" aria-hidden="true"
+													class="ecl-link__icon ecl-icon ecl-icon--xs">
+													<use xlink:href="/component-library/dist/media/icons.1dbe9812.svg#ui--check"></use>
+												</svg></a></li>
+												<li class="ecl-language-list__item "><a lang="fr" hrefLang="fr" rel="alternate" href="/example#language_fr"
+													class="ecl-language-list__link ecl-link ecl-link--standalone">français</a></li>
+													<li class="ecl-language-list__item "><a lang="ga" hrefLang="ga" rel="alternate" href="/example#language_ga"
+														class="ecl-language-list__link ecl-link ecl-link--standalone">Gaeilge</a></li>
+														<li class="ecl-language-list__item "><a lang="hr" hrefLang="hr" rel="alternate" href="/example#language_hr"
+															class="ecl-language-list__link ecl-link ecl-link--standalone">hrvatski</a></li>
+															<li class="ecl-language-list__item "><a lang="it" hrefLang="it" rel="alternate" href="/example#language_it"
+																class="ecl-language-list__link ecl-link ecl-link--standalone">italiano</a></li>
+															</ul>
+														</div>
+														<div class="ecl-language-list__column ecl-col-12 ecl-col-lg-4">
+															<ul class="ecl-language-list__list">
+																<li class="ecl-language-list__item "><a lang="lv" hrefLang="lv" rel="alternate" href="/example#language_lv"
+																	class="ecl-language-list__link ecl-link ecl-link--standalone">latviešu</a></li>
+																	<li class="ecl-language-list__item "><a lang="lt" hrefLang="lt" rel="alternate" href="/example#language_lt"
+																		class="ecl-language-list__link ecl-link ecl-link--standalone">lietuvių</a></li>
+																		<li class="ecl-language-list__item "><a lang="hu" hrefLang="hu" rel="alternate" href="/example#language_hu"
+																			class="ecl-language-list__link ecl-link ecl-link--standalone">magyar</a></li>
+																			<li class="ecl-language-list__item "><a lang="mt" hrefLang="mt" rel="alternate" href="/example#language_mt"
+																				class="ecl-language-list__link ecl-link ecl-link--standalone">Malti</a></li>
+																				<li class="ecl-language-list__item "><a lang="nl" hrefLang="nl" rel="alternate" href="/example#language_nl"
+																					class="ecl-language-list__link ecl-link ecl-link--standalone">Nederlands</a></li>
+																					<li class="ecl-language-list__item "><a lang="pl" hrefLang="pl" rel="alternate" href="/example#language_pl"
+																						class="ecl-language-list__link ecl-link ecl-link--standalone">polski</a></li>
+																						<li class="ecl-language-list__item "><a lang="pt" hrefLang="pt" rel="alternate" href="/example#language_pt"
+																							class="ecl-language-list__link ecl-link ecl-link--standalone">português</a></li>
+																							<li class="ecl-language-list__item "><a lang="ro" hrefLang="ro" rel="alternate" href="/example#language_ro"
+																								class="ecl-language-list__link ecl-link ecl-link--standalone">română</a></li>
+																								<li class="ecl-language-list__item "><a lang="sk" hrefLang="sk" rel="alternate" href="/example#language_sk"
+																									class="ecl-language-list__link ecl-link ecl-link--standalone">slovenčina</a></li>
+																									<li class="ecl-language-list__item "><a lang="sl" hrefLang="sl" rel="alternate" href="/example#language_sl"
+																										class="ecl-language-list__link ecl-link ecl-link--standalone">slovenščina</a></li>
+																										<li class="ecl-language-list__item "><a lang="fi" hrefLang="fi" rel="alternate" href="/example#language_fi"
+																											class="ecl-language-list__link ecl-link ecl-link--standalone">suomi</a></li>
+																											<li class="ecl-language-list__item "><a lang="sv" hrefLang="sv" rel="alternate" href="/example#language_sv"
+																												class="ecl-language-list__link ecl-link ecl-link--standalone">svenska</a></li>
+																											</ul>
+																										</div>
+																									</div>
+																								</div>
+																							</div>
+																						</header>
+																						<div>
+																							<div class="container">
+																								<div class="row">
+																									<div class="col-md-12">
+																										<p>
+																											The charts in this page are composite descriptives about COVID-19 related mobile applications (apps). 
+																											<br><br>
+																											The chart legends list the data categories that are appearing in each chart.
+																											<br>Data categories can be switched on and off by clicking on the respective label(s) in the legend.
+																											<br>The actual numbers for each data category on a graph are visible when hovering the data category on that graph.
+																										</p>					
+																									</div>
+																								</div>
+																								<div class="row">
+																									<div class="col-md-12">
+																										<div class="page-header my-1 pb-0">
+																											<h1 class="text-primary">1. Interesting apps</h1>
+																										</div>
+																										<div class="col-md-12">
+																											<p>
+																												The graph shows the numbers of apps that were identified during a manual analysis for the data as interesting, i.e. worth to examine in more detail. Reasons for the selection might differ, for example, the app might implement proximity tracking or other ways of data sharing. The outside circle shows App Store (iOS), inside circle Google Play (Android).
+																											</p>                    
+																										</div>
+																										<div style="width:75%">
+																											<canvas id="chart-areaInteresting_8a"></canvas>
+																										</div>
+																									</div>
+																								</div>
+																								<br><br>  																							
+																								<div class="row">
+																									<div class="col-md-12">
+																										<div class="page-header my-1 pb-0">
+																											<h1 class="text-primary">2. Interesting apps vs. EU/non EU</h1>
+																										</div>
+																										<div class="col-md-12">
+																											<p>
+																												The graph shows the numbers of interesting and not interesting apps based if the app has been released for at least one EU country or no EU country.
+																											</p>					
+																										</div>
+																										<div style="width:85%">
+																											<canvas id="chart-PolarArea13a1a"></canvas>
+																										</div>
+																									</div>
+																								</div>
+																								<br><br>
+																								<div class="row">
+																									<div class="col-md-12">
+																										<div class="page-header my-1 pb-0">
+																											<h1 class="text-primary">3. Interesting apps vs. Contact Tracing apps</h1>
+																										</div>
+																										<div class="col-md-12">
+																											<p>
+																												The graph shows the numbers of apps that include any form of contact tracing apps that may be interesting or not interesting apps, as identified during a manual analysis. Notably, the kinds of tracing can be different, it is not restricted to proximity tracing only. The outside circle shows App Store (iOS), inside circle Google Play (Android).
+																											</p>					
+																										</div>
+																										<div style="width:75%">
+																											<canvas id="chart-areaContactInteresting_a"></canvas>
+																										</div>
+																									</div>
+																								</div>
+																								<br><br>
+																								<div class="row">
+																									<div class="col-md-12">
+																										<div class="page-header my-1 pb-0">
+																											<h1 class="text-primary">4. Contact Tracing apps vs. EU/non EU</h1>
+																										</div>
+																										<div class="col-md-12">
+																											<p>
+																												The graph shows the numbers of apps that include any form of contact tracing apps based if the app has been released for at least one EU country or no EU country, as identified during a manual analysis. Notably, the kinds of tracing can be different, it is not restricted to proximity tracing only. The outside circle shows App Store (iOS), inside circle Google Play (Android).
+																											</p>					
+																										</div>
+																										<div style="width:75%">
+																											<canvas id="chart-areaContactInterestingEU"></canvas>
+																										</div>
+																									</div>
+																								</div>  																							
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																				<br>
+																			</div>
+																		</div>
+																		<br><br>
+																		<footer class="ecl-footer-standardised">
+																			<div class="ecl-container ecl-footer-standardised__container">
+																				<div class="ecl-footer-standardised__section ecl-footer-standardised__section1"><a href="https://citizensdata.jrc.ec.europa.eu"
+																					class="ecl-footer-standardised__title ecl-link ecl-link--standalone">Data Collection Hub</a>
+																					<div class="ecl-footer-standardised__description">This site is managed by the European Commission's Joint Research Centre (JRC)</div>
+																				</div>
+																				<div class="ecl-footer-standardised__section ecl-footer-standardised__section6">
+																					<div class="ecl-footer-standardised__content">More information on:</div>
+																					<ul class="ecl-footer-standardised__list ecl-footer-standardised__list--condensed">
+																						<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/jrc/communities/en/community/citizensdata"
+																							class="ecl-footer-standardised__link ecl-link ecl-link--standalone">CitizenSData Community Page</a></li>
+																							<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/jrc/en"
+																								class="ecl-footer-standardised__link ecl-link ecl-link--standalone">EU Science Hub</a></li>
+																							</ul>
+																						</div>
+																						<div class="ecl-footer-standardised__section ecl-footer-standardised__section7"><a
+																							href="https://ec.europa.eu/info/index_en"
+																							class="ecl-footer-standardised__title ecl-link ecl-link--standalone">European Commission</a></div>
+																							<div class="ecl-footer-standardised__section ecl-footer-standardised__section8">
+																								<ul class="ecl-footer-standardised__list">
+																									<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/about-european-commission/contact_en"
+																										class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Contact the European Commission</a></li>
+																										<li class="ecl-footer-standardised__list-item"><a href="https://europa.eu/european-union/contact/social-networks_en#n:+i:4+e:1+t:+s"
+																											class="ecl-footer-standardised__link ecl-link ecl-link--standalone ecl-link--icon ecl-link--icon-after"><span
+																											class="ecl-link__label">Follow the European Commission on social media</span> <svg focusable="false"
+																											aria-hidden="true" class="ecl-link__icon ecl-icon ecl-icon--xs">
+																											<use xlink:href="/component-library/dist/media/icons.1dbe9812.svg#ui--external"></use>
+																										</svg></a></li>
+																										<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/resources-partners_en"
+																											class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Resources for partners</a></li>
+																										</ul>
+																									</div>
+																									<div class="ecl-footer-standardised__section ecl-footer-standardised__section9">
+																										<ul class="ecl-footer-standardised__list">
+																											<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/language-policy_en"
+																												class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Language policy</a></li>
+																												<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/cookies_en"
+																													class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Cookies</a></li>
+																													<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/privacy-policy_en"
+																														class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Privacy policy</a></li>
+																														<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/legal-notice_en"
+																															class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Legal notice</a></li>
+																															<li id="brexit-content-disclaimer" class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/brexit-content-disclaimer"
+																																class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Brexit content disclaimer</a></li>
+																															</ul>
+																														</div>
+																													</div>
+																												</footer>
+
+																												<!-- paste the markup from the template here -->
+																												<script
+																												src="https://cdn1.fpfis.tech.ec.europa.eu/ecl/v2.24.0/ec-preset-website/scripts/ecl-ec-preset-website.js"
+																												integrity="sha256-Q2icCzfXqIzarWF//++9auyORJSdr/5R2newRbUqAcY= sha384-yI5jQ21QIzGHSfKXItEmh67/e5g91zjnd+UAmAAzdBv/XaCQC03tMWTErk0tSpKw sha512-CHeXGc8jzWghhq20L4P9OhLMC1LfBai2Xh8+nV5FGvyP8ALCSU3s1bdmoHK0Ve2L6RVr/e5gChZuTZ7jsi5oug=="
+																												crossorigin="anonymous"
+																												></script>
+																												<script>
+																													ECL.autoInit();
+																												</script>
+																											</body>
+																										</body>
+																										</html>
