@@ -269,10 +269,10 @@
 					borderWidth: 1,
 					data: [5, 105, 3, 104, 124, 20, 16, 40, 50]
 				},
-					{label: 'Google Play (Android)',
-					backgroundColor: '#ffc000',
-					borderWidth: 1,
-					data: [5, 49, 3, 102, 121,10, 12, 51, 17]
+				{label: 'Google Play (Android)',
+				backgroundColor: '#ffc000',
+				borderWidth: 1,
+				data: [5, 49, 3, 102, 121,10, 12, 51, 17]
 			}]
 
 		};
@@ -333,99 +333,99 @@
 				}
 			}
 		});
-});
-	</script>
+	});
+</script>
 
 
-	<link rel="stylesheet" href="css/style.css">
-	<link
-	rel="stylesheet"
-	href="https://cdn1.fpfis.tech.ec.europa.eu/ecl/v2.24.0/ec-preset-website/styles/ecl-ec-preset-website.css"
-	integrity="sha256-9j7SsICl+ZX7Fp76FW0ujTGffmyeiYjozFz5CrW8cBI= sha384-ylCAZZb1gOTwHIcxzpGsGD7dBgLgo3+ElksYZVMRUNEai06BznLjw4s4PygTkhUR sha512-NT5nVMJhZeIXxAs9GpbgD3YFbW8j9IuuI2MGUYrIcV9w9ZGK1RiI53UX1B3z2hOGUq8EsVpVwsd7tv6yoISjAg=="
-	crossorigin="anonymous"
-	media="screen"
-	/>
-	<link
-	rel="stylesheet"
-	href="https://cdn1.fpfis.tech.ec.europa.eu/ecl/v2.24.0/ec-preset-website/styles/ecl-ec-preset-website-print.css"
-	integrity="sha256-045tJgqAj/Roq6CMlkNAeuqaVwsVkgxRlx2yVAwJ+K8= sha384-DRy0ViDtsad7jBr29u25O6IVB7x/ioCf+NFF/VYUADAqtglqsdzgyRAI6Ws2ditv sha512-xLJwwvWHtB4immzoa6KERTGK5tRsYg1+jlFucj3FNfbiUd1yanLTVtHvpvM3GBYIo+I7Vk1ks1rhnkYh+KEcJA=="
-	crossorigin="anonymous"
-	media="print"
-	/>
-	<link rel="stylesheet" href="https://inspire.ec.europa.eu/cdn/1.0/css/ec.eu.css">
-	<!--<link rel="stylesheet" href="css/style.css">-->
+<link rel="stylesheet" href="css/style.css">
+<link
+rel="stylesheet"
+href="https://cdn1.fpfis.tech.ec.europa.eu/ecl/v2.24.0/ec-preset-website/styles/ecl-ec-preset-website.css"
+integrity="sha256-9j7SsICl+ZX7Fp76FW0ujTGffmyeiYjozFz5CrW8cBI= sha384-ylCAZZb1gOTwHIcxzpGsGD7dBgLgo3+ElksYZVMRUNEai06BznLjw4s4PygTkhUR sha512-NT5nVMJhZeIXxAs9GpbgD3YFbW8j9IuuI2MGUYrIcV9w9ZGK1RiI53UX1B3z2hOGUq8EsVpVwsd7tv6yoISjAg=="
+crossorigin="anonymous"
+media="screen"
+/>
+<link
+rel="stylesheet"
+href="https://cdn1.fpfis.tech.ec.europa.eu/ecl/v2.24.0/ec-preset-website/styles/ecl-ec-preset-website-print.css"
+integrity="sha256-045tJgqAj/Roq6CMlkNAeuqaVwsVkgxRlx2yVAwJ+K8= sha384-DRy0ViDtsad7jBr29u25O6IVB7x/ioCf+NFF/VYUADAqtglqsdzgyRAI6Ws2ditv sha512-xLJwwvWHtB4immzoa6KERTGK5tRsYg1+jlFucj3FNfbiUd1yanLTVtHvpvM3GBYIo+I7Vk1ks1rhnkYh+KEcJA=="
+crossorigin="anonymous"
+media="print"
+/>
+<link rel="stylesheet" href="https://inspire.ec.europa.eu/cdn/1.0/css/ec.eu.css">
+<!--<link rel="stylesheet" href="css/style.css">-->
 
 
-	<style>
-		body {
-			font-family: 'Arial';
-			text-align: justify;
-		}
+<style>
+	body {
+		font-family: 'Arial';
+		text-align: justify;
+	}
 
-		.container { 
-			margin: 15px auto;
-		}
+	.container { 
+		margin: 15px auto;
+	}
 
-		#chart {
-			float: left;
-			width: 80%;
-		}
+	#chart {
+		float: left;
+		width: 80%;
+	}
 
-		#legend {
-			float: left;
-			margin: 0;
-			position: relative;
-			top: 50%;
-			-ms-transform: translateY(-50%);
-			transform: translateY(-50%);
-		}
+	#legend {
+		float: left;
+		margin: 0;
+		position: relative;
+		top: 50%;
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
 
-		[class$="-legend"] {
-			list-style: none;
-			cursor: pointer;
-			padding-left: 0;
-		}
+	[class$="-legend"] {
+		list-style: none;
+		cursor: pointer;
+		padding-left: 0;
+	}
 
-		[class$="-legend"] li {
-			display: block;
-			padding: 0 5px;
-		}
+	[class$="-legend"] li {
+		display: block;
+		padding: 0 5px;
+	}
 
-		[class$="-legend"] li.hidden {
-			text-decoration: line-through;
-		}
+	[class$="-legend"] li.hidden {
+		text-decoration: line-through;
+	}
 
-		[class$="-legend"] li span {
-			border-radius: 5px;
-			display: inline-block;
-			height: 10px;
-			margin-right: 10px;
-			width: 30px;
-		}
+	[class$="-legend"] li span {
+		border-radius: 5px;
+		display: inline-block;
+		height: 10px;
+		margin-right: 10px;
+		width: 30px;
+	}
 
-		.arrow {
-			border: solid white;
-			border-width: 0 2px 2px 0;
-			display: inline-block;
-			padding: 3px;
-			margin-left: 5px;
-			margin-right: 5px;
-		}
+	.arrow {
+		border: solid white;
+		border-width: 0 2px 2px 0;
+		display: inline-block;
+		padding: 3px;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
 
-		.right {
-			transform: rotate(-45deg);
-			-webkit-transform: rotate(-45deg);
-		}
-		
-		a.ecl-footer-standardised__link.ecl-link.ecl-link--standalone {
-			color: #fff;	
-		}
+	.right {
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+	}
+	
+	a.ecl-footer-standardised__link.ecl-link.ecl-link--standalone {
+		color: #fff;	
+	}
 
-		a.ecl-footer-standardised__title.ecl-link.ecl-link--standalone {
-			color: #fff;	
-		}
+	a.ecl-footer-standardised__title.ecl-link.ecl-link--standalone {
+		color: #fff;	
+	}
 
-	</style>
+</style>
 
 
 </head>
@@ -591,7 +591,7 @@ role="dialog" data-ecl-language-list-overlay="true">
 																									</div>
 																									<div class="col-md-12">
 																										<p>
-																											The following graph shows the distribution of apps released in EU/Non-EU countries. The outer doughnut is for apps published on the App Store (iOS), and the inner doughnut is for apps published on the Google Play (Android).
+																											The following graph shows the distribution of apps released in EU/Non-EU countries. The outer ring is for apps published on the App Store (iOS), and the inner ring is for apps published on the Google Play (Android).
 																										</p>                    
 																									</div>
 																									<div style="width:75%">
@@ -607,7 +607,7 @@ role="dialog" data-ecl-language-list-overlay="true">
 																									</div>
 																									<div class="col-md-12">
 																										<p>
-																											The following graph shows the share of apps that include any form of contact tracing (not only proximity tracing). The outer doughnut is for apps published on the App Store (iOS), and the inner doughnut is for apps published on the Google Play (Android).
+																											The following graph shows the share of apps that include any form of contact tracing (not only proximity tracing). The outer ring is for apps published on the App Store (iOS), and the inner ring is for apps published on the Google Play (Android).
 																										</p>                    
 																									</div>
 																									<div style="width:75%">
@@ -656,62 +656,68 @@ role="dialog" data-ecl-language-list-overlay="true">
 																	<br><br>
 																	<footer class="ecl-footer-standardised">
 																		<div class="ecl-container ecl-footer-standardised__container">
-																			<div class="ecl-footer-standardised__section ecl-footer-standardised__section1"><a href="https://citizensdata.jrc.ec.europa.eu"
+																			<div class="ecl-footer-standardised__section ecl-footer-standardised__section1"  style="width: inherit; word-wrap: break-word;"><a href="https://citizensdata.jrc.ec.europa.eu"
 																				class="ecl-footer-standardised__title ecl-link ecl-link--standalone">Data Collection Hub</a>
 																				<div class="ecl-footer-standardised__description">This site is managed by the European Commission's Joint Research Centre (JRC)</div>
 																			</div>
+																		</div>  																			
+																		<div class="ecl-container ecl-footer-standardised__container">
 																			<div class="ecl-footer-standardised__section ecl-footer-standardised__section6">
-																				<div class="ecl-footer-standardised__content">More information on:</div>
+																				<div class="ecl-footer-standardised__content">For more information see:</div>
 																				<ul class="ecl-footer-standardised__list ecl-footer-standardised__list--condensed">
-																					<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/jrc/communities/en/community/citizensdata"
-																						class="ecl-footer-standardised__link ecl-link ecl-link--standalone">CitizenSData Community Page</a></li>
-																						<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/jrc/en"
-																							class="ecl-footer-standardised__link ecl-link ecl-link--standalone">EU Science Hub</a></li>
-																						</ul>
-																					</div>
-																					<div class="ecl-footer-standardised__section ecl-footer-standardised__section7"><a
-																						href="https://ec.europa.eu/info/index_en"
-																						class="ecl-footer-standardised__title ecl-link ecl-link--standalone">European Commission</a></div>
-																						<div class="ecl-footer-standardised__section ecl-footer-standardised__section8">
+																					<li class="ecl-footer-standardised__list-item">
+																						<a href="https://ec.europa.eu/jrc/communities/en/community/citizensdata"
+																						class="ecl-footer-standardised__link ecl-link ecl-link--standalone">CitizenSData Community Page</a>
+																					</li>
+																					<li class="ecl-footer-standardised__list-item">
+																						<a href="https://ec.europa.eu/jrc/en" 
+																						class="ecl-footer-standardised__link ecl-link ecl-link--standalone">EU Science Hub</a>
+																					</li>
+																				</ul>
+																			</div>
+																			<div class="ecl-footer-standardised__section ecl-footer-standardised__section7"><a
+																				href="https://ec.europa.eu/info/index_en"
+																				class="ecl-footer-standardised__title ecl-link ecl-link--standalone">European Commission</a></div>
+																				<div class="ecl-footer-standardised__section ecl-footer-standardised__section8">
+																					<ul class="ecl-footer-standardised__list">
+																						<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/about-european-commission/contact_en"
+																							class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Contact the European Commission</a></li>
+																							<li class="ecl-footer-standardised__list-item"><a href="https://europa.eu/european-union/contact/social-networks_en#n:+i:4+e:1+t:+s"
+																								class="ecl-footer-standardised__link ecl-link ecl-link--standalone ecl-link--icon ecl-link--icon-after"><span
+																								class="ecl-link__label">Follow the European Commission on social media</span> <svg focusable="false"
+																								aria-hidden="true" class="ecl-link__icon ecl-icon ecl-icon--xs">
+																								<use xlink:href="/component-library/dist/media/icons.1dbe9812.svg#ui--external"></use>
+																							</svg></a></li>
+																							<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/resources-partners_en"
+																								class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Resources for partners</a></li>
+																							</ul>
+																						</div>
+																						<div class="ecl-footer-standardised__section ecl-footer-standardised__section9">
 																							<ul class="ecl-footer-standardised__list">
-																								<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/about-european-commission/contact_en"
-																									class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Contact the European Commission</a></li>
-																									<li class="ecl-footer-standardised__list-item"><a href="https://europa.eu/european-union/contact/social-networks_en#n:+i:4+e:1+t:+s"
-																										class="ecl-footer-standardised__link ecl-link ecl-link--standalone ecl-link--icon ecl-link--icon-after"><span
-																										class="ecl-link__label">Follow the European Commission on social media</span> <svg focusable="false"
-																										aria-hidden="true" class="ecl-link__icon ecl-icon ecl-icon--xs">
-																										<use xlink:href="/component-library/dist/media/icons.1dbe9812.svg#ui--external"></use>
-																									</svg></a></li>
-																									<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/resources-partners_en"
-																										class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Resources for partners</a></li>
-																									</ul>
-																								</div>
-																								<div class="ecl-footer-standardised__section ecl-footer-standardised__section9">
-																									<ul class="ecl-footer-standardised__list">
-																										<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/language-policy_en"
-																											class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Language policy</a></li>
-																											<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/cookies_en"
-																												class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Cookies</a></li>
-																												<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/privacy-policy_en"
-																													class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Privacy policy</a></li>
-																													<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/legal-notice_en"
-																														class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Legal notice</a></li>
-																														<li id="brexit-content-disclaimer" class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/brexit-content-disclaimer"
-																															class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Brexit content disclaimer</a></li>
-																														</ul>
-																													</div>
-																												</div>
-																											</footer>
+																								<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/language-policy_en"
+																									class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Language policy</a></li>
+																									<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/cookies_en"
+																										class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Cookies</a></li>
+																										<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/privacy-policy_en"
+																											class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Privacy policy</a></li>
+																											<li class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/legal-notice_en"
+																												class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Legal notice</a></li>
+																												<li id="brexit-content-disclaimer" class="ecl-footer-standardised__list-item"><a href="https://ec.europa.eu/info/brexit-content-disclaimer"
+																													class="ecl-footer-standardised__link ecl-link ecl-link--standalone">Brexit content disclaimer</a></li>
+																												</ul>
+																											</div>
+																										</div>
+																									</footer>
 
-																											<!-- paste the markup from the template here -->
-																											<script
-																											src="https://cdn1.fpfis.tech.ec.europa.eu/ecl/v2.24.0/ec-preset-website/scripts/ecl-ec-preset-website.js"
-																											integrity="sha256-Q2icCzfXqIzarWF//++9auyORJSdr/5R2newRbUqAcY= sha384-yI5jQ21QIzGHSfKXItEmh67/e5g91zjnd+UAmAAzdBv/XaCQC03tMWTErk0tSpKw sha512-CHeXGc8jzWghhq20L4P9OhLMC1LfBai2Xh8+nV5FGvyP8ALCSU3s1bdmoHK0Ve2L6RVr/e5gChZuTZ7jsi5oug=="
-																											crossorigin="anonymous"
-																											></script>
-																											<script>
-																												ECL.autoInit();
-																											</script>
-																										</body>
-																									</body>
-																									</html>
+																									<!-- paste the markup from the template here -->
+																									<script
+																									src="https://cdn1.fpfis.tech.ec.europa.eu/ecl/v2.24.0/ec-preset-website/scripts/ecl-ec-preset-website.js"
+																									integrity="sha256-Q2icCzfXqIzarWF//++9auyORJSdr/5R2newRbUqAcY= sha384-yI5jQ21QIzGHSfKXItEmh67/e5g91zjnd+UAmAAzdBv/XaCQC03tMWTErk0tSpKw sha512-CHeXGc8jzWghhq20L4P9OhLMC1LfBai2Xh8+nV5FGvyP8ALCSU3s1bdmoHK0Ve2L6RVr/e5gChZuTZ7jsi5oug=="
+																									crossorigin="anonymous"
+																									></script>
+																									<script>
+																										ECL.autoInit();
+																									</script>
+																								</body>
+																							</body>
+																							</html>
